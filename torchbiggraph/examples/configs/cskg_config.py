@@ -13,9 +13,9 @@ def get_torchbiggraph_config():
         # I/O data
         entity_path="data/cskg",
         edge_paths=[
-            "data/cskg/train.csv",
-			"data/cskg/dev.csv",
-			"data/cskg/test.csv"
+            "data/cskg/train_partitioned",
+			"data/cskg/dev_partitioned",
+			"data/cskg/test_partitioned"
         ],
         checkpoint_path="model/cskg",
 
