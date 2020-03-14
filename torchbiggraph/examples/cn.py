@@ -26,20 +26,20 @@ from torchbiggraph.util import (
 
 
 FILENAMES = [
-    "emb_data/cskg_merged/train.csv", 
-    "emb_data/cskg_merged/dev.csv",
-    "emb_data/cskg_merged/test.csv",
+    "emb_data/conceptnet/train.csv", 
+    "emb_data/conceptnet/dev.csv",
+    "emb_data/conceptnet/test.csv",
 ]
 
 # Figure out the path where the sample config was installed by the package manager.
 # This can be overridden with --config.
 DEFAULT_CONFIG = pkg_resources.resource_filename("torchbiggraph.examples",
-                                                 "configs/cskg_config.py")
+                                                 "configs/cn_config.py")
 
 
 def main():
     setup_logging()
-    parser = argparse.ArgumentParser(description='CSKG embeddings')
+    parser = argparse.ArgumentParser(description='CN embeddings')
     parser.add_argument('--config', default=DEFAULT_CONFIG,
                         help='Path to config file')
     parser.add_argument('-p', '--param', action='append', nargs='*')

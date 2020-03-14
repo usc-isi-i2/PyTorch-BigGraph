@@ -1,11 +1,15 @@
-conda activate embs-env
+#!/bin/bash
 
-rm -rf data/cskg
-rm -rf model/cskg
+# conda activate embs-env
 
-python torchbiggraph/examples/cskg.py --data_dir .
+dataset="cn"
+
+rm -rf data/$dataset
+rm -rf model/$dataset
+
+python torchbiggraph/examples/${dataset}.py --data_dir .
 
 torchbiggraph_export_to_tsv \
-  torchbiggraph/examples/configs/cskg_config.py \
-  --entities-output cskg_entity_embeddings.tsv \
-  --relation-types-output cskg_relation_types_parameters.tsv
+  /nas/home/ilievski/PyTorch-BigGraph/torchbiggraph/examples/configs/${dataset}_config.py \
+  --entities-output embeddings/${dataset}/entity_embeddings.tsv \
+  --relation-types-output embeddings/${dataset}/relation_types_parameters.tsv
